@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entries | {{request.user }}</title>
+</head>
+<body>
+  <h1 align="center">My underground journal</h1>
+  <a href="logout">Logout</a>
+  <h2>Entries</h2>
+<small><a href="post">Make an entry</a></small>
+  <hr>
+{% if entries %}
+    {% for e in entries %}
+      <div class="row">
+          <h3>{{e.title}}</h3>
+          <small>{{e.created_at}} (UTC) </small><br>
+          {{e.entry|linebreaks}}
+          <hr>
+      </div>
+    {% endfor %}
+{% else %}
+    <p>No entries have been made yet.</p>
+{% endif %}
+</body>
+</html>

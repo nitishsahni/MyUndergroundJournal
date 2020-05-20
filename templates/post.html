@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post | {{request.user }}</title>
+</head>
+<body>
+  <h1 align="center">My underground journal</h1>
+  <a href="logout">Logout</a>
+  <h2>Post an entry</h2>
+              <div align="center">
+        <form method="post" novalidate>
+          {% csrf_token %}
+                <label>Title:</label><br>
+            <input name="title" placeholder="title" size="100"> <br><br>
+            <label>Entry: </label> <br>
+            <textarea name="entry" rows=40 cols=100> </textarea><br>
+          <button type="submit">Submit</button>
+        </form><br>
+            </div>
+    <small>See your <a href="entries">entries</a></small>
+
+</body>
+</html>
