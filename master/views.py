@@ -37,7 +37,7 @@ def logoutView(request):
 
 @login_required(login_url='signup')
 def entries(request):
-    entries = Post.objects.filter(user=request.user)
+    entries = Post.objects.filter(user=request.user).order_by('-pk')
     context = {'entries': entries}
     return render(request, 'entries.html', context)
 
@@ -49,7 +49,6 @@ def post(request):
             post = form.save(commit=False)
             post.user = request.user
             post.save()
-            messages.success(request, 'Congratulations on posting an internship!')
             return redirect('entries')
     else:
         form = PostForm()

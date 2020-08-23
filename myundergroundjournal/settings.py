@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5n(p7+#*)+tqx8mk6w*ra4%n_0ni3fxiy8l#l7p)#0r47#=sa!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['muj.nitsahn.in', 'myundergroundjournal.pythonanywhere.com', 'www.myundergroundjournal.pythonanywhere.com']
 
 
 # Application definition
@@ -107,7 +107,7 @@ LOGIN_REDIRECT_URL = 'post'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -120,3 +120,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static'
