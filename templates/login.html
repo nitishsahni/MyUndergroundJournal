@@ -8,13 +8,20 @@
 <body>
     <h1 align="center">My underground journal</h1>
   <br>
-  <h2>Login</h2>
+  <div style="
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    ">
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
   </form>
   <br>
-<small>Don't have an account? <a href="signup">Sign up.</a> </small>
+<small>You don't have to be Nitish. <a href="signup">Sign up.</a> </small>
+  </div>
+  
 </body>
 </html>
